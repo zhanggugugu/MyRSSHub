@@ -1,6 +1,22 @@
 {
     "name": "rsshub",
     "version": "1.0.0",
+    "engines": {
+      "node": "20.x",
+      "npm": "9.x"
+    },
+    "builds": [
+    {
+      "src": "api/index.js",
+      "use": "@vercel/node"
+    }
+    ],
+    "build": {
+    "env": {
+      "NODE_ENV": "production"
+      }
+    },
+  "installCommand": "npm install --legacy-peer-deps",
     "description": "Make RSS Great Again!",
     "keywords": [
         "RSS"
