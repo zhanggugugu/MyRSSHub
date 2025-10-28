@@ -1,8 +1,13 @@
 const serverless = require('serverless-http');
 const Koa = require('koa');
-const RSSHub = require('./lib/index'); // RSSHub 原入口
+const RSSHub = require('rsshub');
 
 const app = new Koa();
+RSSHub.init({
+  CACHE_TYPE: null,
+  ALLOW_ORIGIN: '*',
+});
+
 app.use(RSSHub.routes());
 app.use(RSSHub.allowedMethods());
 
